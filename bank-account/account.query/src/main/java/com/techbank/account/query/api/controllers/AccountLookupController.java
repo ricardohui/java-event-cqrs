@@ -70,7 +70,7 @@ public class AccountLookupController {
     @GetMapping(path = "/byHolder/{accountHolder}")
     public ResponseEntity<AccountLookupResponse> getAccountByHolder(@PathVariable(value = "accountHolder") String accountHolder) {
         try {
-            List<BankAccount> accounts = queryDispatcher.send(new FindAccountByHolderQuery(accountHolder));
+            List<BankAccount> accounts = queryDispatcher.send(new FindAccountByHolderQuery(accountHolder.toLowerCase()));
             if (accounts == null || accounts.size() == 0) {
                 return new ResponseEntity<>(null, HttpStatus.NO_CONTENT);
             }
