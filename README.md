@@ -33,42 +33,45 @@ MongoDB as the event store by Command project
 endpoint: `localhost:27017`
 
 
-POST http://localhost:5000/api/v1/openBankAccount
+POST `http://localhost:5000/api/v1/openBankAccount`
+```
 {
 "accountHolder": "John doe",
 "accountType": "SAVINGS",
 "openingBalance": 50.0
 }
+```
 
 
+DELETE `http://localhost:5000/api/v1/closeBankAccount/aa216923-1123-4bcd-872a-c623f171aa29`
 
-DELETE http://localhost:5000/api/v1/closeBankAccount/aa216923-1123-4bcd-872a-c623f171aa29
 
-
-PUT http://localhost:5000/api/v1/depositFunds/0471a0c4-8d17-4ea8-b4cb-7a7b82c4c90b
-{
+PUT `http://localhost:5000/api/v1/depositFunds/0471a0c4-8d17-4ea8-b4cb-7a7b82c4c90b`
+```{
 "amount":  150.0
 }
+```
 
 
-
-PUT http://localhost:5000/api/v1/withdrawFunds/0471a0c4-8d17-4ea8-b4cb-7a7b82c4c90b
+PUT `http://localhost:5000/api/v1/withdrawFunds/0471a0c4-8d17-4ea8-b4cb-7a7b82c4c90b`
+```
 {
-"amount":  99.0
+    "amount":  99.0
 }
+```
 
 
 All Account lookup
-GET http://localhost:5001api/v1/bankAccountLookup/
+GET `http://localhost:5001api/v1/bankAccountLookup/`
 
 Specific Account by Id
-GET http://localhost:5001/api/v1/bankAccountLookup/byId/0471a0c4-8d17-4ea8-b4cb-7a7b82c4c90b
+GET `http://localhost:5001/api/v1/bankAccountLookup/byId/0471a0c4-8d17-4ea8-b4cb-7a7b82c4c90b`
 
 Specific Account by Name
-GET http://localhost:5001/api/v1/bankAccountLookup/byHolder/John doe
+GET `http://localhost:5001/api/v1/bankAccountLookup/byHolder/John doe`
 
 Specific Account by Balance
-GET http://localhost:5001/api/v1/bankAccountLookup/withBalance/GREATER_THAN/1
+GET `http://localhost:5001/api/v1/bankAccountLookup/withBalance/GREATER_THAN/1`
 
 Restore DB
-POST http://localhost:5000/api/v1/restoreReadDb
+POST `http://localhost:5000/api/v1/restoreReadDb`
