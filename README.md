@@ -1,7 +1,9 @@
 README.md
 
-To set up
 
+![](./Architecture+Overview-2.jpg)
+
+To set up
 mysql
 ```
 docker run -it -d --name mysql-container -p 3306:3306 --network techbankNet -e MYSQL_ROOT_PASSWORD=techbankRootPsw --restart always -v mysql_data_container:/var/lib/mysql mysql:latest
